@@ -1,19 +1,21 @@
+import pkg.Shape;
 class InterObj{
 public static void main(String []a) {
 
-AreaFormat sq = new Square(20);
-AreaFormat rt = new Rectangle(10, 30);
-AreaFormat cr = new Circle(3);
+Shape s = new Square(20);
+s.area();
+s= new Rectangle(10, 30);
+s.area();
+s= new Circle(3);
+s.area();
 
-sq.area();
-rt.area();
-cr.area();
+
 
 }
 }
 
 
-class Square implements AreaFormat{
+class Square implements Shape{
 int len;
 
 public void area(){
@@ -25,7 +27,7 @@ len = length;
 }
 }
 
-class Rectangle implements AreaFormat{
+class Rectangle implements Shape{
 int len;
 int breath;
 
@@ -40,9 +42,10 @@ breath = bth;
 
 }
 
-class Circle implements AreaFormat {
+class Circle implements Shape {
 final double pi = 3.14;
 int radius;
+
 public void area(){
 System.out.println(pi*radius*radius);
 }
@@ -51,8 +54,4 @@ public Circle(int r){
 radius = r;
 }
 
-}
-
-interface AreaFormat {
-public void area();
 }
